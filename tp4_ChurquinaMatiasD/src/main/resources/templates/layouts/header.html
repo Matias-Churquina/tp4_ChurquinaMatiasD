@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head th:fragment="head">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title data-th-text="${titulo}"></title>
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+		<link th:rel="stylesheet" th:href="@{/css/style.css}"> 
+	</head>
+	<body>
+		<h1 th:text="${mensaje}"></h1>
+		<header th:fragment="header"  class="">
+			<div class="row me-2">
+            	<div class="col-md-2 text-center ">
+					<a data-th-href="@{/crud/principal}">
+						<img class="imgEncabezado1 rounded" alt="Logo Universidad Nacional de Jujuy" src="https://www.estudiaradistancia.com.ar/logos/original/logo-universidad-nacional-de-jujuy.webp">
+					</a>
+				</div>
+				<div class="col-md-10 custom-header">
+					<h1 class="titulo text-start mt-2">Facultad de Ingeniería</h1>
+					<p class="text-start frase fs-5 pb-2 pt-3"> "La educación es el arma más poderosa que puedes usar para cambiar el mundo"
+				</div>
+			</div>
+		</header>
+	</body>
+</html>

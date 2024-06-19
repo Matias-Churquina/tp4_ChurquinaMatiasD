@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		<div class="container">
+			<h1 class="mt-3" data-th-text="${edicion}?'Editar Materia':'Nueva Materia'"></h1>
+			<form data-th-action="${edicion}?@{/materia/modificar} : @{/materia/guardar}" th:object="${materia}" class="row" method="post">
+				<div class="mb-3 col-8">
+			  		<label for="codMateria" class="form-label" >Código:</label>
+			  		<input type="number" class="form-control" id="codMateria" th:field="*{codigo}" th:disabled="${edicion}">
+					<input type="hidden" class="form-control" id="codMateria" th:field="*{codigo}" th:id="${edicion}">
+				</div>
+				<div class="mb-3 col-8">
+					<label for="nombreMateria" class="form-label">Nombre:</label>
+			  		<input type="text" class="form-control" id="nombreMateria" th:field="*{nombre}">
+				</div>
+				<div class="mb-3 col-8">
+			  		<label for="horaMateria" class="form-label">Horas:</label>
+			  		<input type="number" class="form-control" id="horaMateria" th:field="*{horas}">
+				</div>
+				<div class="mb-3 col-8">
+			  		<label for="modMateria" class="form-label">Modalidad:</label>
+			  		<input type="text" class="form-control" id="modMateria" th:field="*{modalidad}">
+				</div>
+				<div class="mb-3 col-8">
+			  		<label for="docenteMateria" class="form-label">Docente:</label>
+			  		<select class="form-select" id="docenteMateria" th:field="*{docente.legajo}">
+			  			<option value="">-- Selecciona un docente --</option>
+			  			<option th:each="d: ${docentes}" th:value="${d.legajo}" th:text="${d.apellido}+' '+${d.nombre}"></option>
+			  		</select>
+				</div>
+				<div class="mb-3 col-8">
+			  		<label for="carreraMateria" class="form-label">Carrera:</label>
+			  		<select class="form-select" id="carreraMateria" th:field="*{carrera.codigo}">
+			  			<option value="">-- Selecciona un carrera --</option>
+			  			<option th:each="c: ${carreras}" th:value="${c.codigo}" th:text="${c.nombre}"></option>
+			  		</select>
+				</div>
+				<div class="mb-3 col-8">
+					<p><input type="submit" class="btn btn-primary" th:value="${edicion}?'Modificar':'Guardar'"></input></p>
+				</div>
+			</form>
+		</div>
+		<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+		<script type="text/javascript" th:scr="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}" ></script>
+	</body>
+</html>

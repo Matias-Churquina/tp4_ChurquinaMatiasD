@@ -1,0 +1,42 @@
+@charset "UTF-8";
+body{
+	background-color: #007997 ;
+}
+/*.logo{
+	background-size: 100% 120px ;
+	margin: 0;
+	width: 30%;
+	height: 120px;
+	position: fixed;
+	float: left;
+}
+.fondo{
+	background-image: url('2030ingenieria1.png');
+	text-align: center;
+	margin-top: 120px;
+	padding: 2rem;
+} */
+.logo{
+	width: 150px;
+}
+.imgEncabezado1{
+	height: 165px;
+	width:  160px;	
+}
+.biblioteca{
+	height: 230px;
+	width: 230px;
+}
+.icono-footer{
+	height: 40px;
+	width: 40px;
+}
+#noticias{
+	border-top: 3px solid #3b3b4f;
+}
+.custom-header {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

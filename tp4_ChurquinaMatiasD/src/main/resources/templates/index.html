@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head th:fragment="head">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title data-th-text="${titulo}"></title>
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+		<link th:rel="stylesheet" th:href="@{/css/style.css}"> 
+	</head>
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		<nav class=" navbar navbar-expand-lg bg-body-tertiary m-2 rounded">
+	    	<div class="container-fluid">
+	        	<a class="navbar-brand" href="#">
+	        		<img class="logo" alt="Logo Facultad de Ingeniería" src="https://fi.unju.edu.ar/images/fi-logo.png">
+	        	</a>
+	        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">
+	          <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="navbar-collapse collapse" id="navbarNavAltMarkup" >
+	          <div class="navbar-nav">
+	            <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+	            <a class="nav-link" href="#">Acerca de</a>
+	            <a class="nav-link" data-th-href="@{/carrera/listado}">Carreras</a>
+	            <a class="nav-link" data-th-href="@{/docente/listado}">Docentes</a>
+	            <a class="nav-link" data-th-href="@{/alumno/listado}">Alumos</a>
+	            <a class="nav-link" data-th-href="@{/materia/listado}">Materias</a>
+	            <a class="nav-link" href="#noticias">Noticias</a>
+	            <a class="nav-link disabled" aria-disabled="true">Contactos</a>
+	          </div>
+	        </div>
+	      </div>
+   		</nav>
+   		<main class="container">
+   			<div class="row">
+   				<div class="col-md-8 border bg-white me-2 p-3 rounded">
+	   				<div id="inicio">
+	   					<h3>Principal</h3>
+	   					<p>La Facultad de Ingeniería de la Universidad Nacional de Jujuy (UNJu) es una institución académica comprometida con la formación de profesionales en diversas áreas de la ingeniería. Ubicada en San Salvador de Jujuy, la facultad ofrece una variedad de carreras de grado y posgrado.</p>
+						<p>Algunas de las carreras que se imparten en la Facultad de Ingeniería son:</p>
+							<ul>
+							  <li>Ingeniería Química</li>
+							  <li>Ingeniería de Minas</li>
+							  <li>Ingeniería Industrial</li>
+							  <li>Ingeniería Informática</li>
+							  <li>Licenciatura en Sistemas</li>
+							  <li>Licenciatura en Tecnología de los Alimentos</li>
+							  <li>Licenciatura en Ciencias Geológicas</li>
+							</ul>
+						<p>Además, la facultad cuenta con programas de pregrado, como la Tecnicatura Universitaria en Diseño Integral de Videojuegos, la carrera de Analista Programador Universitario, y la Tecnicatura Universitaria en Perforaciones.</p>
+					</div>
+					<div id="noticias">
+						<h3 class="mt-2">Noticias</h3>
+						<h4>Inscripciones a Pasantías | Empresa Balut Hnos. - Ing. Informática, Lic. en Sistemas y APU</h4>
+					|	<p>La Facultad de Ingeniería de la Universidad Nacional de Jujuy, llama a la inscripción de interesados para cubrir 1 (una) Plaza de Pasantía para las carreras de Ingeniería Informática, Licenciatura en Sistemas y Analista Programador Universitario, solicitadas por la empresa BALUT Hnos.</p>
+					</div>
+				</div>
+   				<aside class="col-md-3 bg-white rounded">
+   					<h5 class="pt-3 ms-3">Biblioteca Virtual: </h5>
+   					<a href="https://virtual.unju.edu.ar/local/bidi/access.php">
+   						<img class=" biblioteca ms-3 pb-3 " alt="Icono biblioteca" src="	https://virtual.unju.edu.ar/pluginfile.php/639508/block_html/content/CID-Ingenieria.jpeg">
+   					</a>
+   					<h5 class="ms-3">Calendario Académico: </h5>
+   					<a href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html">
+   						<img class="biblioteca ms-3 pb-3" alt="Icono Calendario" src="/img/download_image_1717453915165.png">
+   					</a>
+   				</aside>
+   			</div>
+   		</main>
+   		<div th:fragmento="footer" class="container-fluid bg-white mt-2  rounded">
+   			<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+   		</div>
+		<script type="text/javascript" th:scr="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}" ></script>
+	</body>	
+</html>
