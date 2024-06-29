@@ -3,78 +3,40 @@ package ar.edu.unju.fi.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Component
+@Entity(name = "MATERIAS")
 public class Materia {
+	@NonNull
+	@Column(name="pro_codigo")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
+	@NonNull
+	@Column(name="pro_nombre", nullable = false)
 	private String nombre;
+	@NonNull
+	@Column(name="pro_horas", nullable = false)
 	private Integer horas;
+	@NonNull
+	@Column(name="pro_modalidad", nullable = false)
 	private String modalidad;
+	@NonNull
+	@Column(name="pro_docente", nullable = false)
 	@Autowired
 	private Docente docente;
+	@NonNull
+	@Column(name="pro_carrera", nullable = false)
 	@Autowired
 	private Carrera carrera;
-	
-	public Materia() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Materia(Integer codigo, String nombre, Integer horas, String modalidad, Docente docente, Carrera carrera) {
-		super();
-		this.codigo = codigo;
-		this.nombre = nombre;
-		this.horas = horas;
-		this.modalidad = modalidad;
-		this.docente = docente;
-		this.carrera = carrera;
-	}
-
-	public Integer getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Integer getHoras() {
-		return horas;
-	}
-
-	public void setHoras(Integer horas) {
-		this.horas = horas;
-	}
-
-	public String getModalidad() {
-		return modalidad;
-	}
-
-	public void setModalidad(String modalidad) {
-		this.modalidad = modalidad;
-	}
-
-	public Docente getDocente() {
-		return docente;
-	}
-
-	public void setDocente(Docente docente) {
-		this.docente = docente;
-	}
-
-	public Carrera getCarrera() {
-		return carrera;
-	}
-
-	public void setCarrera(Carrera carrera) {
-		this.carrera = carrera;
-	}
-	
-	
 }
